@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+    type Items = {
+        hasItem: boolean,
+        clicked: boolean,
+    };
+
+    const createItems = () => {
+
+        const itemsArray: Items[] = [];
+
+        for (let i = 0; i < 36; i++) {
+            const gameItems = {
+                hasItem: false,
+                clicked: false,
+            };
+
+            itemsArray.push(gameItems);
+        }
+        const trueItem = Math.floor(Math.random() * itemsArray.length);
+        itemsArray[trueItem].hasItem = true;
+
+    };
+
+    const [items, setItems] = useState(createItems());
+
+    return (
+        <div className="App">
+
+        </div>
+    );
+};
 
 export default App;
