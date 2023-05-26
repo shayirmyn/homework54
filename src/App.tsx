@@ -22,10 +22,11 @@ const App = () => {
         }
         const trueItem = Math.floor(Math.random() * itemsArray.length);
         itemsArray[trueItem].hasItem = true;
-
     };
 
     const [items, setItems] = useState(createItems());
+
+    console.log(items);
 
     return (
         <div className="App">
