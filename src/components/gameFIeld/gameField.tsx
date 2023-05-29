@@ -23,6 +23,7 @@ const GameField: React.FC<IGameField> = props => {
 
     return (
         <div className="gameField">
+            <h2>Try to find a red square</h2>
             {everyCell}
         </div>
     );
