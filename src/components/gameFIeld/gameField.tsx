@@ -8,8 +8,9 @@ type Items = {
 };
 interface IGameField {
     items: Items[],
-    clickCell: Function;
+    clickCell: (id: string) => void,
 }
+
 
 const GameField: React.FC<IGameField> = props => {
 

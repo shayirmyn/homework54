@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {ReactEventHandler} from "react";
+
 interface IBtnReset {
-    clickCell: Function,
+    reset: ReactEventHandler;
 }
-const Buttons: React.FC<IBtnReset> = props => {
+
+const Button: React.FC<IBtnReset> = (props) => {
     return (
         <div>
-            <button className="button-50" role="button">reset</button>
+            <button className="button-50" role="button" onClick={props.reset}>reset</button>
         </div>
     );
-};
+}
 
-export default Buttons;
+export default Button;
